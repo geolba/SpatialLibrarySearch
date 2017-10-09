@@ -1,0 +1,185 @@
+﻿{
+	"langTranslate": 
+	[
+	{
+		"deutsch": "Albanisch",
+		"local": "Shqipe"
+	},
+	{
+		"deutsch": "Arabisch",
+		"local": "العربية"
+	},
+	{
+		"deutsch": "Armenisch",
+		"local": "հայերեն"
+	},
+	{
+		"deutsch": "Bulgarisch",
+		"local": "български"
+	},
+	{
+		"deutsch": "Chinesisch",
+		"local": "中国的"
+	},
+	{
+		"deutsch": "Dänisch",
+		"local": "Dansk"
+	},
+	{
+		"deutsch": "Englisch",
+		"local": "English"
+	},
+	{
+		"deutsch": "Estnisch",
+		"local": "Eesti"
+	},
+	{
+		"deutsch": "Finnisch",
+		"local": "Suomi"
+	},
+	{
+		"deutsch": "Französisch",
+		"local": "Français"
+	},
+	{
+		"deutsch": "Georgisch",
+		"local": "საქართველოს"
+	},
+	{
+		"deutsch": "Griechisch (Neu-Gr.)",
+		"local": "Ελληνικά"
+	},
+	{
+		"deutsch": "Hebräisch",
+		"local": "עברית"
+	},
+	{
+		"deutsch": "Hindi",
+		"local": "हिंदी"
+	},
+	{
+		"deutsch": "Indonesisch",
+		"local": "Bahasa Indonesia"
+	},
+	{
+		"deutsch": "Isländisch",
+		"local": "Islenska"
+	},
+	{
+		"deutsch": "Italienisch",
+		"local": "Italiano"
+	},
+	{
+		"deutsch": "Japanisch",
+		"local": "日本語"
+	},
+	{
+		"deutsch": "Kroatisch",
+		"local": "Hrvatski"
+	},
+	{
+		"deutsch": "Koreanisch",
+		"local": "한국어"
+	},
+	{
+		"deutsch": "Lateinisch",
+		"local": "Latin"
+	},
+	{
+		"deutsch": "Lettisch",
+		"local": "Latviešu"
+	},
+	{
+		"deutsch": "Litauisch",
+		"local": "Lietuvių"
+	},
+	{
+		"deutsch": "Malaysisch",
+		"local": "Bahasa Melayu"
+	},
+	{
+		"deutsch": "Mazedonisch",
+		"local": "македонски"
+	},
+	{
+		"deutsch": "Niederländisch",
+		"local": "Nederlands"
+	},
+	{
+		"deutsch": "Norwegisch",
+		"local": "Norsk"
+	},
+	{
+		"deutsch": "Persisch",
+		"local": "فارسی"
+	},
+	{
+		"deutsch": "Polnisch",
+		"local": "Polski"
+	},
+	{
+		"deutsch": "Portugiesisch",
+		"local": "Português"
+	},
+	{
+		"deutsch": "Rumänisch",
+		"local": "Român"
+	},
+	{
+		"deutsch": "Russisch",
+		"local": "Pусский"
+	},
+	{
+		"deutsch": "Schwedisch",
+		"local": "Svenska"
+	},
+	{
+		"deutsch": "Serbisch",
+		"local": "Српски"
+	},
+	{
+		"deutsch": "Serbokroatisch",
+		"local": "Srpsko-hrvatski"
+	},
+	{
+		"deutsch": "Slowakisch",
+		"local": "Slovenčina"
+	},
+	{
+		"deutsch": "Slowenisch",
+		"local": "Slovenski"
+	},
+	{
+		"deutsch": "Spanisch",
+		"local": "Español"
+	},
+	{
+		"deutsch": "Thailändisch",
+		"local": "ไทย"
+	},
+	{
+		"deutsch": "Tschechisch",
+		"local": "český"
+	},
+	{
+		"deutsch": "Türkisch",
+		"local": "Türkçe"
+	},
+	{
+		"deutsch": "Ukrainisch",
+		"local": "Yкраїнська"
+	},
+	{
+		"deutsch": "Ungarisch",
+		"local": "Magyar"
+	},
+	{
+		"deutsch": "Vietnamesisch",
+		"local": "Tiếng Việt"
+	},
+	{
+		"deutsch": "Weißrussisch",
+		"local": "Bеларускі"
+	}
+	]
+}

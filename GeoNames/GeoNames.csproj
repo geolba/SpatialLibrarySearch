@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F009ED96-F295-46F5-8471-B00D4AF37F2F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GeoNames</RootNamespace>
+    <AssemblyName>GeoNames</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <IISExpressSSLPort>44300</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Adlib.Data, Version=1.0.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Adlib.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="iTextSharp">
+      <HintPath>..\packages\iTextSharp-LGPL.4.1.6\lib\iTextSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="countryCodes2.txt" />
+    <Content Include="css\app.css" />
+    <Content Include="css\img\close.gif" />
+    <Content Include="css\img\cloud-popup-relative.png" />
+    <Content Include="css\img\esri.gif" />
+    <Content Include="css\img\favicon.ico" />
+    <Content Include="css\img\gba.png" />
+    <Content Include="css\img\legend.png" />
+    <Content Include="css\img\logoGeoNames.png" />
+    <Content Include="css\img\openLayers.png" />
+    <Content Include="css\img\search.png" />
+    <Content Include="css\openlayers_style.css" />
+    <None Include="resources\sass\style.scss" />
+    <Content Include="css\img\expand.png" />
+    <Content Include="css\img\i_help.png" />
+    <Content Include="css\img\layer-switcher-maximize.png" />
+    <Content Include="css\img\layer-switcher-minimize.png" />
+    <Content Include="css\img\loading.gif" />
+    <Content Include="css\img\undoExpand.png" />
+    <Content Include="Global.asax" />
+    <Content Include="index.html" />
+    <Content Include="langDictionary.txt" />
+    <Content Include="resources\Adlib.Data.dll" />
+    <Content Include="resources\js\jQuery.download.js" />
+    <Content Include="scripts\app\config.js" />
+    <Content Include="resources\js\lib.js" />
+    <Content Include="scripts\app\bootstrapper.js" />
+    <Content Include="scripts\app\dataservice.js" />
+    <Content Include="scripts\app\mapApp.js" />
+    <Content Include="scripts\app\model.js" />
+    <Content Include="scripts\app\utilities.js" />
+    <Content Include="scripts\app\vm.listResults.js" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="pdf\PdfHandler.ashx" />
+    <Content Include="http-proxy.ashx" />
+    <Content Include="package.json" />
+    <Content Include="scripts\js\lib.js" />
+    <Content Include="webpack.mix.js" />
+    <Content Include="scripts\plugins\jquery.adlibdata-1.0.1.js" />
+    <Content Include="scripts\plugins\jquery.geonamesdata-1.0.1.js" />
+    <Content Include="scripts\openlayers\OpenLayersSelf.js" />
+    <Content Include="scripts\openlayers\ScaleBar.js" />
+    <Content Include="SpatialLibrarySearch.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdlibHandler.ashx.cs">
+      <DependentUpon>AdlibHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration.cs" />
+    <Compile Include="Entities\AdlibArticle.cs" />
+    <Compile Include="Entities\AlternativeName.cs" />
+    <Compile Include="Entities\CountryCode.cs" />
+    <Compile Include="Entities\ResultLocation.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="http-proxy.ashx.cs">
+      <DependentUpon>http-proxy.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="pdf\PdfHandler.ashx.cs">
+      <DependentUpon>PdfHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="pdf\pdfPage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdlibHandler.ashx" />
+    <None Include="Properties\PublishProfiles\Profil1.pubxml">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="resources\sass\app.scss" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>29957</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:44301/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:44301/</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://adv-kaiarn-0711/geonames</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

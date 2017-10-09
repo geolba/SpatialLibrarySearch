@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="de-at" http-equiv="Content-Language" />
+    <meta name="Description" content="Bibliothek Adlib GBA GeoNames Geologische Bundesanstalt" />
+    <title>Adlib/Geonames</title>
+    <link href="css/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+
+    <!--STYLES -->
+    <link type="text/css" href="css/openlayers_style.css" rel="stylesheet" media="all"/>  
+    <link type="text/css" href="css/app.css" rel="stylesheet" media="all" />
+</head>
+<body>
+
+    <div id="header">
+        <div id="header_content">
+            <h2 style="position: absolute; left: 20px; top: 0;"><span class="fontface1">Spatial Library Search</span><span class="fontface2"> - GBA Literatursuche &uuml;ber GeoNames.org</span></h2>
+            <a href="SpatialLibrarySearch.pdf" target="_blank">
+                <img id="imgAbout" alt="Hilfe" src="css/img/i_help.png" style="border: 0; position: absolute; right: 20px; top: 10px;" />
+            </a>
+        </div>
+    </div>
+
+
+    <div id="map">
+
+        <div id="customZoom">
+            <div id="zoomIn">+</div>
+            <div id="zoomOut">-</div>
+        </div>
+
+        <div id="searchContainer">
+            <div id="searchHeader">
+                <label style="padding-left: 15px;">Search GeoNames.org</label>
+                <img id="centerPoint" data-bind="click: centerSearch" alt="search" class="tooltip" title="search current extent" src="css/img/search.png" style="padding-left: 60px; border: 0;" />
+            </div>
+            <div class="clear"></div>
+            <div id="searchBox">
+
+                <input type="text" id="txtSearch" placeholder="Search GeoNames..." data-bind='value: searchString, valueUpdate: "afterkeydown", executeOnEnter: searchListResults'
+                       style="width: 90%;"/><br />
+                <button id="btnSearch" data-bind="disable: searchString().length < 1, click: searchListResults"
+                        style="font-size: 12px; font-weight: bold; width: 90%; height: 22%;line-height: 22%;">
+                    Search
+                </button>
+                <br />
+                <button id="btnClear" data-bind="enable: listResults().length > 0, click: clearListResults"
+                        style="font-size: 12px; font-weight: bold; width: 90%; height: 22%; line-height: 22%;">
+                    Clear place names
+                </button>
+            </div>
+        </div>
+
+        <div id="resultContainer" data-bind="slideVisible: listResults().length > 0">
+            <div id="resultHeader">
+                <label style="padding-left: 5px;">Select place</label>
+            </div>
+            <div class="clear"></div>
+            <div id="resultBox">
+                <div data-bind="with: !selected()">Select place name below:</div>
+                <div data-bind="with: selected()">
+                    <span data-bind="text: name"></span>
+                </div>
+                <div id="results">
+                    <ul id="resultList" data-bind="foreach: listResults">
+                        <li data-bind="click: function(){ $root.setSelected($data) },
+                            css: {selected: $root.isSelected($data)}">
+                            <div>
+                                <span>
+                                    <label data-bind="text: name" style="text-decoration: underline; color: #0000FF;"></label>
+                                    ,
+                                    <label data-bind="text: country"></label>
+                                    ,
+                                    <label data-bind="text: bundesland"></label>
+                                    <br />
+                                    <label class="listFeatureClass" data-bind="text: featureClassName"></label>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="locationContainer" data-bind="slideVisible: adlibResults().length > 0">
+            <div id="locationHeader">
+                <label style="padding-left: 5px;">Localized literature search</label>
+            </div>
+            <div class="clear"></div>
+            <div id="locationBox">
+                <img id="Img1" alt="" src="css/img/legend.png" style="width:100%;" />
+
+                <div id="filterDiv" style="text-align: left;">
+                    <button id="btnClearAdlibMarkers" data-bind="enable: adlibResults().length > 0, click: clearAdlibResults"
+                            style="font-size: 12px; font-weight: bold; width: 90%;">
+                        Clear location points
+                    </button>
+                    <button id="btnExportAdlibMarkers" data-bind="enable: adlibResults().length > 0, click: exportAdlibResults"
+                            style="font-size: 12px; font-weight: bold; width: 90%;">
+                        Export current results (PDF)
+                    </button>
+                    <div style="text-align: left;">
+                        <span data-bind="text: filteredAdlibResults().length"></span>
+                        <span>/</span>
+                        <span data-bind="text: adlibResults().length"></span>
+                        <span>places matching the search</span>
+                    </div>
+
+                    <ul id="filterList" data-bind="foreach: filterExpressions">
+                        <li>
+                            <div data-bind="style: { color: isPdfFiltered()  ? 'blue' : 'black',
+                                    fontWeight: isPdfFiltered() ? 'bold' : '',
+                                    borderWidth:  isPdfFiltered()  ? '2px' : '0px',
+                                    borderColor: 'black', borderBottomStyle : isPdfFiltered()  ? 'solid' : 'hidden' }">
+                                <span>
+                                    <input class="chkFilter" data-bind="checked: checked" type="checkbox" />
+                                    <label data-bind="text: label"></label>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="images">
+            <a href="http://opac.geologie.ac.at/ais312/" target="_blank">
+                <img id="logoAdlib" alt="gba" src="css/img/gba.png"/>
+            </a>
+            <a href="http://www.geonames.org" target="_blank">
+                <img id="logoGeoNames" alt="gba" src="css/img/logoGeoNames.png"/>
+            </a>
+            <a href="http://openlayers.org/" target="_blank">
+                <img id="logoOpenLayers" alt="gba" src="css/img/openLayers.png"/>
+            </a>
+            <a href="http://www.esri.com/" target="_blank">
+                <img id="logoEsri" alt="gba" src="css/img/esri.gif"/>
+            </a>
+        </div>
+
+    </div>
+
+    <!-- 3rd party libraries -->
+    <script type="text/javascript" src="scripts/openlayers/openlayersself.js"></script>
+    <script type="text/javascript" src="scripts/openlayers/ScaleBar.js"></script> 
+    <script type="text/javascript" src="scripts/js/lib.js"></script>
+    
+    <!-- App libraries -->   
+    <script type="text/javascript" src="scripts/app/config.js"></script>
+    <script type="text/javascript" src="scripts/app/utilities.js"></script>
+    <script type="text/javascript" src="scripts/app/model.js"></script>
+    <script type="text/javascript" src="scripts/app/dataservice.js"></script>
+    <script type="text/javascript" src="scripts/app/mapApp.js"></script>
+    <script type="text/javascript" src="scripts/app/vm.listResults.js"></script>
+
+    <!-- Kick it off -->
+    <script type="text/javascript" src="scripts/app/bootstrapper.js"></script>
+</body>
+</html>
