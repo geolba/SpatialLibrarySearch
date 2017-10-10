@@ -16,7 +16,7 @@
             // increment the lock attribute value (or create the attribute,
             // if not exists)
             if (existingDiv.length > 0) {
-                if (typeof (existingDiv.attr("lock")) === "undefined") {
+                if (typeof existingDiv.attr("lock") === "undefined") {
                     existingDiv.attr("lock", 1);
                 } else {
                     existingDiv.attr("lock", parseInt(existingDiv.attr("lock")) + 1);
@@ -62,7 +62,7 @@
 
             var lock = loadingDivElement.attr("lock");
 
-            if (typeof (lock) === "undefined") {
+            if (typeof lock === "undefined") {
                 loadingDivElement.remove();
             } else {
                 var lockValue = parseInt(lock);

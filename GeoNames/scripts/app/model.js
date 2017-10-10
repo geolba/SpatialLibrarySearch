@@ -32,7 +32,7 @@
             return brief.adlibLanguageName() + ' ' + brief.label();
         });
         return brief;
-    };
+    }
 
     return {       
         FilterExpressionBrief: FilterExpressionBrief

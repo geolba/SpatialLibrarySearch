@@ -38,7 +38,7 @@
         geonamesSearchRequest.done(function (data)
         {           
             var _listResults = [];
-            if (data.geonames == undefined || data.geonames instanceof Array == false) {
+            if (data.geonames === undefined || data.geonames instanceof Array === false) {
                 if (data.status.message) {
                     toastr.warning(data.status.message);
                 }
@@ -91,7 +91,7 @@
         var gbauser = app.geonamesuser;// "geosetter";
         var country = "Austria";
         var options = {};
-        if (selectedListObject.country.toLowerCase() == country.toLowerCase())
+        if (selectedListObject.country.toLowerCase() === country.toLowerCase())
         {
             if (selectedListObject.population > 50000)
             {
@@ -128,7 +128,7 @@
 
         geonamesNearbySearchRequest.done(function (data) {
             var _locationResults = [];
-            if (data.geonames == undefined || data.geonames instanceof Array == false) {
+            if (data.geonames === undefined || data.geonames instanceof Array === false) {
                 if (data.status.message) {
                     toastr.warning(data.status.message);
                 }
@@ -149,26 +149,26 @@
                 var number = 0;
                 var latin = /^[A-Za-z0-9üöäÜÖÄß]+$/;
                 data.geonames.forEach(function (item) {
-                    if (item.fcl == 'S') {
+                    if (item.fcl === 'S') {
                         return null;
                     }
                     number++;
 
                     var newAlternateArray = new Array();
-                    if (item.alternateNames != undefined)
+                    if (item.alternateNames !== undefined)
                     {
                         item.alternateNames.forEach(function (alternateName)
                         {
-                            if (alternateName.lang != "link" && alternateName.lang != "post" && alternateName.lang != "abbr"
-                                && alternateName.lang != "iata" && alternateName.lang != "icao" && alternateName.lang != "faac"
-                                && alternateName.name != item.name && latin.test(alternateName.name) == true)
+                            if (alternateName.lang !== "link" && alternateName.lang !== "post" && alternateName.lang !== "abbr"
+                                && alternateName.lang !== "iata" && alternateName.lang !== "icao" && alternateName.lang !== "faac"
+                                && alternateName.name !== item.name && latin.test(alternateName.name) === true)
                             {
                                 var tempObject = {
                                     name: alternateName.name,
                                     lang: alternateName.lang,
                                     completeName: alternateName.name + "_" + alternateName.lang
                                 };
-                                if (_hasObjectName(tempObject.name, newAlternateArray) == false) {
+                                if (_hasObjectName(tempObject.name, newAlternateArray) === false) {
                                     newAlternateArray.push(tempObject);
                                 }
 
@@ -215,7 +215,7 @@
         var normalSearch = false;
         var country = "Austria";
         //innerhalb von Österreich ist der Suchradius 10km mit maximal 300 Treffer:
-        if (selectedListObject.country.toLowerCase() == country.toLowerCase())
+        if (selectedListObject.country.toLowerCase() === country.toLowerCase())
         {
             if (selectedListObject.population > 50000)
             {
@@ -266,7 +266,7 @@
             //locationResultsObservable(_locationResults);
             toastr.success(app.toasts.retrievedLocationData);
             //make the array distinct by the property 'name'
-            var _locationResults = _cleanupDuplicates(_locationResults, 'name');
+            _locationResults = _cleanupDuplicates(_locationResults, 'name');
             _getAdlibResultsBriefs(adlibResultsObservable, _locationResults);
            
         }
@@ -279,7 +279,7 @@
     };
 
     var _getAdlibResultsBriefs = function (adlibResultsObservable, locationResults) {
-        if (adlibResultsObservable != null && adlibResultsObservable().length > 0)
+        if (adlibResultsObservable !== null && adlibResultsObservable().length > 0)
         {
             adlibResultsObservable([]);//übergebenes observable Array leeren
         }
@@ -400,7 +400,7 @@
             adlibResult.adlibArticles.forEach(function (adlibArticle) {
                 adlibArticle.languageCodes.forEach(function (language) {
                     //if array does not contain value:
-                    if ($.inArray(language, uniqueLanguageList) == -1) {
+                    if ($.inArray(language, uniqueLanguageList) === -1) {
                         uniqueLanguageList.push(language);
                     }
                 });
