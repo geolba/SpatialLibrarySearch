@@ -24,7 +24,7 @@
 
         myRequest.done(function (data)
         {
-            if (data.geonames == undefined) {
+            if (data.geonames === undefined) {
                 errorCallback(data.status.message);
                 return;
             }
@@ -32,32 +32,32 @@
 
             //producing a new jQuery object containing the return values
             var number = 0;
-            if (successCallback && typeof (successCallback) === "function")
+            if (successCallback && typeof successCallback === "function")
             {
                 successCallback($.map(data.geonames, function (item) {
-                    if (item.fcl == 'S' || item.fcl == 'A') {
+                    if (item.fcl === 'S' || item.fcl === 'A') {
                         return null;
                     }
                     number++;
                    
                     var latin = /^[A-Za-z0-9üöäÜÖÄß]+$/;                   
 
-                    if (normalSearch == false)
+                    if (normalSearch === false)
                     {
                         var newAlternateArray = new Array();
-                        if (item.alternateNames != undefined)
+                        if (item.alternateNames !== undefined)
                         {
                             item.alternateNames.forEach(function (alternateName) {
-                                if (alternateName.lang != "link" && alternateName.lang != "post" && alternateName.lang != "abbr"
-                                    && alternateName.lang != "iata" && alternateName.lang != "icao" && alternateName.lang != "faac"
-                                    && alternateName.name != item.name && latin.test(alternateName.name) == true)
+                                if (alternateName.lang !== "link" && alternateName.lang !== "post" && alternateName.lang !== "abbr"
+                                    && alternateName.lang !== "iata" && alternateName.lang !== "icao" && alternateName.lang !== "faac"
+                                    && alternateName.name !== item.name && latin.test(alternateName.name) === true)
                                 {
                                     var tempObject = {
                                         name: alternateName.name,
                                         lang: alternateName.lang,
                                         completeName: alternateName.name + "_" + alternateName.lang
                                     };
-                                    if (hasObjectName(tempObject.name, newAlternateArray) == false) {
+                                    if (hasObjectName(tempObject.name, newAlternateArray) === false) {
 
                                         //uniqueLanguageList.push(language);
                                         newAlternateArray.push(tempObject);
@@ -84,10 +84,10 @@
                             adlibArticles: [],
                             verifiziert: false,
                             count: 0
-                        }
+                        };
                     }
 
-                    else if (normalSearch == true) {
+                    else if (normalSearch === true) {
                         return {
                             id: number,
                             name: item.name, //+ (item.adminName1 ? ", " + item.adminName1 : ""),
@@ -99,7 +99,7 @@
                             lat: item.lat,
                             lon: item.lng,
                             population: item.population
-                        }
+                        };
                     }
 
                 }));
@@ -109,7 +109,7 @@
 
         myRequest.fail(function (jqXHR, textStatus)
         {
-            if (errorCallback && typeof (errorCallback) === "function")
+            if (errorCallback && typeof errorCallback === "function")
             {
                 errorCallback(textStatus);
             }
@@ -130,7 +130,7 @@
     
     var htmlEncode = function (options) {
 
-        if (options.data == undefined)
+        if (options.data === undefined)
             return options;
 
         //jQuery HTML encoding    

@@ -29,7 +29,7 @@
             success: function (data)
             {
                 //Check the diagnostic node for errors
-                if (data.adlibJSON.diagnostic.error != undefined)
+                if (data.adlibJSON.diagnostic.error !== undefined)
                 {
                     callback("error1: " + data.adlibJSON.diagnostic.error.message);
                 }
@@ -50,17 +50,16 @@
     };
 
     //Hilfsfunktion
-    var htmlEncode = function (options)
-    {
+    var htmlEncode = function (options) {
 
-        if (options.data == undefined)
+        if (options.data === undefined)
             return options;
 
         //jQuery HTML encoding    
         options.data = $('<div/>').text(options.data).html();
 
         return options;
-    }
+    };
 
 
 })(jQuery);

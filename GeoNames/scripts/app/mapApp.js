@@ -68,14 +68,6 @@
         "select": new OpenLayers.Style(templateSelect, { context: context })
     });
 
-    var markers;
-    var center = new OpenLayers.LonLat(16.3716888427734, 48.2082017620591).transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));  // Centered on LVienna because I am biased
-    var zoomLevel = 6;
-    var numZoomLevels = 20;
-    var map;
-    // Define a projection for the map
-    var proj = new OpenLayers.Projection("EPSG:4326");
-
     var renderMap = function () {
         var options =
         {
@@ -92,7 +84,7 @@
                    {
                        enableKinetic: true
                    }
-                }),
+                })
             ],
             units: "km",
             panDuration: 100, //numZoomLevels: numZoomLevels,
@@ -144,7 +136,7 @@
 
         //$.each(feature.attributes.adlibArticles.slice(0, 5), function (index, article)
         var grepArray = $.grep(feature.attributes.adlibArticles, function (article, i) {
-            return (article.visible == true);
+            return article.visible === true;
         });
 
         if (grepArray.length >= 100) {
@@ -158,8 +150,8 @@
 
         //only display the first 5 adlibArticles-entries
         $.each(grepArray.slice(0, 5), function (index, article) {
-            if (article.visible == true) {
-                if (article.verifiziert == true) {
+            if (article.visible === true) {
+                if (article.verifiziert === true) {
                     //popupContentHTML += "<li class='verifiziert'>" + article.author + ",<a target='_blank' href='http://opac.geologie.ac.at/ais312/dispatcher.aspx?action=search&database=ChoiceFullCatalogue&search=(priref=" + article.priref + ")'> Titel: " + article.title + "</a></li>";
                     popupContentHTML += "<li class='verifiziert list'><a target='_blank' href='http://opac.geologie.ac.at/ais312/dispatcher.aspx?action=search&database=ChoiceFullCatalogue&search=(priref=" + article.priref + ")'><span class='author'>" + article.author + ": </span><span>" + article.title + "</span></a></li>";
                 }
@@ -176,12 +168,12 @@
             var currSearchStat = String.Empty;
             var output = feature.attributes.name;
 
-            if (output.indexOf("Sankt") != -1) {
+            if (output.indexOf("Sankt") !== -1) {
                 var output2 = output.replace("Sankt", "St");
                 currSearchStat = 'geographical_keyword="' + output + '" or title="' + output + '" or geographical_keyword="' + output2 + '" or title="' + output2 + '"';
                 //currSearchStat = 'geographical_keyword="' + output + '" or title="' + output + '" or abstract="' + output + '" or geographical_keyword="' + output2 + '" or title="' + output2 + '" or abstract="' + output2 + '"';
             }
-            else if (output.indexOf("St.") != -1) {
+            else if (output.indexOf("St.") !== -1) {
                 var output3 = output.replace("St.", "Sankt");
                 currSearchStat = 'geographical_keyword="' + output + '" or title="' + output + '" or geographical_keyword="' + output3 + '" or title="' + output3 + '"';
                 //currSearchStat = 'geographical_keyword="' + output + '" or title="' + output + '" or abstract="' + output + '" or geographical_keyword="' + output3 + '" or title="' + output3 + '" or abstract="' + output3 + '"';
@@ -194,7 +186,7 @@
 
             if (feature.attributes.alternateNames.length > 0) {
                 for (var j = 0; j < feature.attributes.alternateNames.length; j++) {
-                    if (feature.attributes.alternateNames[j].name != feature.attributes.name) {
+                    if (feature.attributes.alternateNames[j].name !== feature.attributes.name) {
                         currSearchStat += ' or geographical_keyword="' + feature.attributes.alternateNames[j].name + '" or title="' + feature.attributes.alternateNames[j].name + '"';
                         //currSearchStat += ' or geographical_keyword="' + feature.attributes.alternateNames[j].name + '" or title="' + feature.attributes.alternateNames[j].name + '" or abstract="' + feature.attributes.alternateNames[j].name + '"';
                     }
@@ -247,16 +239,16 @@
     var buildMarkers = function (searchPoints, setCenter) {
         var newCenterLL;
         $.each(searchPoints, function (i, point) {
-            if (i == 0) {
-                newCenterLL = new OpenLayers.LonLat(point.lon, point.lat).transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));;
+            if (i === 0) {
+                newCenterLL = new OpenLayers.LonLat(point.lon, point.lat).transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));
             }
             latit = point.lat;
             longit = point.lon;
             //markerIcon = icon.clone();
-            lonLatMarker = new OpenLayers.LonLat(longit, latit).transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));;
+            lonLatMarker = new OpenLayers.LonLat(longit, latit).transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));
             _addMarker(lonLatMarker, point);
         });
-        if (setCenter == true) {
+        if (setCenter === true) {
             map.setCenter(newCenterLL, 12);
         }
     };
@@ -270,7 +262,7 @@
         while (map.popups.length) {
             map.removePopup(map.popups[0]);
         }
-        if (setCenter == true)
+        if (setCenter === true)
         {
             map.setCenter(center, zoomLevel);
            
