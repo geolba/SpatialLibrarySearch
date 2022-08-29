@@ -13,6 +13,12 @@ let mix = require('laravel-mix');
 //const mix = require('laravel-mix');
 
 mix.setPublicPath('./');
+mix.setResourceRoot('../');
+// mix.options({
+//     fileLoaderDirs:  {
+//         fonts: 'css/fonts'
+//     }
+// });
 
 mix.js('resources/js/lib.js', 'scripts/js')
 .sass('resources/sass/app.scss', 'css');

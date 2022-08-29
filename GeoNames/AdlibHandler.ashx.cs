@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -25,8 +25,8 @@ namespace GeoNames
         {
             string geonamesUser = Configuration.GeonamesUser;
             response = context.Response;
-            String jsonString = String.Empty;
-            String countryArrayString = String.Empty;
+            string jsonString = string.Empty;
+            string countryArrayString = string.Empty;
 
             if (!String.IsNullOrEmpty(context.Request.QueryString["test"]))
             {
@@ -108,12 +108,12 @@ namespace GeoNames
                     // Create a connection to the wwwopac.ashx 
                     conn = new AdlibConnection(url);
                 }
-                catch (WebException)
+                catch (WebException e)
                 {
                     context.Response.Clear();
                     //Internal Server Error
                     context.Response.StatusCode = 500;
-                    context.Response.Write("adlib error: " + "adlib server is unknown");
+                    context.Response.Write("adlib error: " + "adlib server is unknown " + e.Message);
                     return;
                 }
                 catch (Exception)

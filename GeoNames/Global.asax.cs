@@ -8,7 +8,8 @@ namespace GeoNames
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            ServicePointManager.ServerCertificateValidationCallback = (sender1, certificate, chain, sslPolicyErrors) => true;
+            //ServicePointManager.ServerCertificateValidationCallback = (sender1, certificate, chain, sslPolicyErrors) => true;
+            System.Net.ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12;
         }
       
     }

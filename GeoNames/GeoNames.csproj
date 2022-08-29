@@ -26,6 +26,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -83,6 +84,18 @@
     <Content Include="css\img\openLayers.png" />
     <Content Include="css\img\search.png" />
     <Content Include="css\openlayers_style.css" />
+    <Content Include="fonts\vendor\%40fontsource\open-sans\files\open-sans-all-400-normal.woff" />
+    <Content Include="fonts\vendor\%40fontsource\open-sans\files\open-sans-cyrillic-400-normal.woff2" />
+    <Content Include="fonts\vendor\%40fontsource\open-sans\files\open-sans-cyrillic-ext-400-normal.woff2" />
+    <Content Include="fonts\vendor\%40fontsource\open-sans\files\open-sans-greek-400-normal.woff2" />
+    <Content Include="fonts\vendor\%40fontsource\open-sans\files\open-sans-greek-ext-400-normal.woff2" />
+    <Content Include="fonts\vendor\%40fontsource\open-sans\files\open-sans-hebrew-400-normal.woff2" />
+    <Content Include="fonts\vendor\%40fontsource\open-sans\files\open-sans-latin-400-normal.woff2" />
+    <Content Include="fonts\vendor\%40fontsource\open-sans\files\open-sans-latin-ext-400-normal.woff2" />
+    <Content Include="fonts\vendor\%40fontsource\open-sans\files\open-sans-vietnamese-400-normal.woff2" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="resources\sass\style.scss" />
     <Content Include="css\img\expand.png" />
     <Content Include="css\img\i_help.png" />
