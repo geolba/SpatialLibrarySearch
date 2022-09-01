@@ -63,21 +63,27 @@ html, body
     position: absolute;
     z-index: 2;
     left: 50%;
-    margin-left: -250px;
+    margin-left: -300px;
     width: 600px;
     height: auto;
     overflow: hidden;
     bottom: 5px;
 }
 
-#images a {
+#images div {
     display: inline-block;
-    margin: 0 5px;
+    margin: 0 15px;
 }
 
 #images img {  
     height: 25px;
 }
+ #images a {
+    height: 25px;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+ }
 
 #searchContainer 
 { 

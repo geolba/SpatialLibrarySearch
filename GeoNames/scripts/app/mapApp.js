@@ -97,12 +97,25 @@
         markers = new OpenLayers.Layer.Vector("Code Markers", { styleMap: aStyleMap });
 
         //ESRI tile service:
-        var tileServiceURL = "//server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/${z}/${y}/${x}";
-        var layer = new OpenLayers.Layer.OSM(null, tileServiceURL, {
-            transitionEffect: 'resize', tileOptions: { crossOriginKeyword: null }, wrapDateLine: false
-        });
+        // var tileServiceURL = "//server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/${z}/${y}/${x}";
+        // var layer = new OpenLayers.Layer.OSM(null, tileServiceURL, {
+        //     transitionEffect: 'resize', tileOptions: { crossOriginKeyword: null }, wrapDateLine: false
+        // });
 
-
+        var layer = new OpenLayers.Layer.XYZ(
+          "OpenStreetMap",
+          [
+            "https://a.tile.openstreetmap.de/tiles/osmde/${z}/${x}/${y}.png",
+            "https://b.tile.openstreetmap.de/tiles/osmde/${z}/${x}/${y}.png",
+            "https://c.tile.openstreetmap.de/tiles/osmde/${z}/${x}/${y}.png",
+          ],
+          {
+            sphericalMercator: true,
+            attribution: 'Tile server sponsored by STRATO / <b>Europe only</b> / <a href="./germanstyle.html">About style</a>',
+            numZoomLevels: 18,
+          }
+        );
+       
         map.addLayers([layer, markers]);
         selectControl = new OpenLayers.Control.SelectFeature(markers,
                 { onSelect: _onMarkerSelect, onUnselect: _onMarkerUnselect });

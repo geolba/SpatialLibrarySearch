@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"svg.preview.background": "custom",
+		"json.maxItemsComputed": 4000
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"type": "chrome",
+				"request": "launch",
+				"name": "Launch Chrome against localhost",
+				// "port": 9222,
+				"url": "http://localhost:8080",
+				"webRoot": "${workspaceFolder}",
+				"breakOnLoad": true,
+				"runtimeExecutable": "C:/ProgramData/scoop/apps/googlechrome/current/chrome.exe",
+				"sourceMaps": true,
+				"timeout": 15000
+			}
+		]
+	}
+}
