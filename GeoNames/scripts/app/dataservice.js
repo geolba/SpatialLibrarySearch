@@ -31,8 +31,8 @@
         //});
         var geonamesSearchRequest = $.ajax({
             type: "POST",
-            // url: "http-proxy.ashx?url=" + url,
-            url: url,
+            url: "http-proxy.ashx?url=" + url,
+            // url: url,
             dataType: "json",
             data: str //data:options
         });
@@ -122,8 +122,8 @@
         //});
         var geonamesNearbySearchRequest = $.ajax({
             type: "POST",            
-            // url: "http-proxy.ashx?url=" + url,
-            url: url,
+            url: "http-proxy.ashx?url=" + url,
+            // url: url,
             dataType: "json",
             data: str //data:options
         });
