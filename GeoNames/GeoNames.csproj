@@ -93,6 +93,9 @@
     <Content Include="fonts\vendor\%40fontsource\open-sans\files\open-sans-latin-400-normal.woff2" />
     <Content Include="fonts\vendor\%40fontsource\open-sans\files\open-sans-latin-ext-400-normal.woff2" />
     <Content Include="fonts\vendor\%40fontsource\open-sans\files\open-sans-vietnamese-400-normal.woff2" />
+    <Content Include=".gitignore" />
+    <Content Include=".env" />
+    <Content Include="example.env" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml">
       <SubType>Designer</SubType>
     </None>
@@ -122,7 +125,9 @@
     <Content Include="pdf\PdfHandler.ashx" />
     <Content Include="http-proxy.ashx" />
     <Content Include="package.json" />
+    <Content Include="scripts\js\config.js" />
     <Content Include="scripts\js\lib.js" />
+    <Content Include="scripts\js\lib.js.LICENSE.txt" />
     <Content Include="webpack.mix.js" />
     <Content Include="scripts\plugins\jquery.adlibdata-1.0.1.js" />
     <Content Include="scripts\plugins\jquery.geonamesdata-1.0.1.js" />

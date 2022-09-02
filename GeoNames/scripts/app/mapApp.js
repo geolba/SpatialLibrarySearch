@@ -111,8 +111,11 @@
           ],
           {
             sphericalMercator: true,
-            attribution: 'Tile server sponsored by STRATO / <b>Europe only</b> / <a href="./germanstyle.html">About style</a>',
-            numZoomLevels: 18,
+            transitionEffect: "resize",
+            attribution:
+              'Tile server sponsored by STRATO / <b>Europe only</b> / <a href="./germanstyle.html">About style</a>',
+            tileOptions: { crossOriginKeyword: null },
+            wrapDateLine: false,
           }
         );
        

@@ -459,7 +459,7 @@
             .fail(queryLangDicFailed);
 
         function queryLangDicSucceeded(data) {
-            arr = data.langTranslate;
+            let arr = data.langTranslate;
             $.each(arr, function (index, el)
             {
                 if (!_langDictionary[el.deutsch])

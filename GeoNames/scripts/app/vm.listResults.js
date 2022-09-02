@@ -91,7 +91,7 @@
     var filteredAdlibResults = ko.computed(function ()
     {     
 
-        checkedFilterExpressions = filterExpressions().filter(function (el) {
+        let checkedFilterExpressions = filterExpressions().filter(function (el) {
             if (el.checked() == true)
              {                
                  return el;

@@ -1,7 +1,6 @@
-﻿var app = window.app || {};
-app.geonamesuser = "dummyuser";
+﻿app.geonamesuser = GEONAME_USER;//("dummyuser";
 
-app.vm = app.vm || {};
+// app.vm = app.vm || {};
 app.viewIds = {
     listResults: '#listResults-view'
     //kartierer: '#kartierer-view'
